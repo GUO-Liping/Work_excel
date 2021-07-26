@@ -1,19 +1,17 @@
 # -*- coding utf-8 -*-
 import pandas as pd
-a = pd.read_excel('D:\\GitHub\\data_a.xlsx', index_col=[0], header=[0])
-b = pd.read_excel('D:\\GitHub\\data_b.xlsx', sheet_name=None, index_col=None, header=None, skiprows=0, na_values=['NA'])  # it's a dictionary
-b_sheet1 = b['Sheet1'] # it is a DataFrame
-b_sheet1[3] = b_sheet1[2] - b_sheet1[1]
-b_sheet2 = b_sheet1[2] - b_sheet1[1]
-
-还剩切片操作
+a = pd.read_excel('data_a.xlsx', index_col=[0], header=[0])
+b = pd.read_excel('data_b.xlsx', sheet_name=None, index_col=None, header=None, skiprows=0, na_values=['NA'])  # it's a dictionary
 # where index_col=[0] means that using the first column as the index rows
 # index_col=None means that nothing was set as the index rows
 # header=[2] means deleting the first and second rows and using the third row as the index columns
 # header=None means that nothing was set as the index columns
 
+b_sheet1 = b['Sheet1'] # it is a DataFrame
+b_sheet1[3] = b_sheet1[2] - b_sheet1[1]
+b_sheet2 = b_sheet1[2] - b_sheet1[1]
 
-#df.to_excel('foo.xlsx',sheet_name='Sheet1')
+b_sheet2.to_excel('data_b2.xlsx',sheet_name='Sheet1')
 
 ##############################################################################################################
 '''
